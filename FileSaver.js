@@ -15,10 +15,12 @@
 
 var saveAs = saveAs || (function(view) {
 	"use strict";
+	// We commented out the following lines in order to add support for WPF applications that run inside IE >=10
+	// WPF applications that run inside IE >=10 report themselves as IE7 although they have all features of the browser they run in.
 	// IE <10 is explicitly unsupported
-	if (typeof view === "undefined" || typeof navigator !== "undefined" && /MSIE [1-9]\./.test(navigator.userAgent)) {
-		return;
-	}
+	// if (typeof view === "undefined" || typeof navigator !== "undefined" && /MSIE [1-9]\./.test(navigator.userAgent)) {
+	// 	   return;
+	// }
 	var
 		  doc = view.document
 		  // only get URL when necessary in case Blob.js hasn't overridden it yet
